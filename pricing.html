@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zavaleta Enterprise — Pricing</title>
+  <meta name="description" content="Simple, transparent pricing tiers for Zavaleta Enterprise services.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Tiny helpers specific to this page, safe to remove if you add them to styles.css */
+    .pricing-hero { padding: 8rem 0 3rem; text-align:center; }
+    .pricing-hero p { max-width: 720px; margin: .75rem auto 0; }
+    .plan-cta { display:inline-block; margin-top: 1.25rem; }
+    .note { color: var(--muted); font-size:.95rem; }
+    @media (max-width:768px){
+      .pricing-hero { padding-top: 9rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="visually-hidden">Skip to content</a>
+
+  <!-- Top Navigation (mirrors index-2.html) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo" aria-label="Zavaleta Enterprise">
+        <div class="logo-text">
+          <div class="logo-main">ZAVALETA <span class="glow">ENTERPRISE</span></div>
+          <div class="logo-sub">Technology | Innovation | Intelligence</div>
+        </div>
+      </div>
+      <ul class="nav-menu" aria-label="Primary">
+        <li class="nav-item"><a class="nav-link" href="index-2.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="index-2.html#divisions">Divisions</a></li>
+        <li class="nav-item"><a class="nav-link" href="index-2.html#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" href="pricing.html">Pricing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="solution pricing-hero">
+      <div class="container">
+        <div class="section-header">
+          <h2>Simple, transparent pricing</h2>
+          <p class="muted">Choose a plan that fits your needs. Upgrade anytime. </p>
+        </div>
+        <p class="note">Toggle between monthly and yearly to preview savings.</p>
+        <div class="center" style="margin-top:1rem;">
+          <label class="btn btn--ghost" style="display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1rem;border-radius:999px;cursor:pointer;">
+            <span>Monthly</span>
+            <input id="billing-toggle" type="checkbox" aria-label="Toggle yearly billing">
+            <span>Yearly</span>
+            <span class="note" style="margin-left:.25rem;">Get 2 months free</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plans (reuse target-market + market-card styles for visual consistency) -->
+    <section class="target-market">
+      <div class="container">
+        <div class="market-content" id="plans">
+          <!-- Free -->
+          <article class="market-card">
+            <h4>Free</h4>
+            <p class="muted">For personal use and exploration.</p>
+            <p class="muted"><strong class="price" data-monthly="$0" data-yearly="$0">$0</strong>/mo</p>
+            <ul class="muted" style="margin-left:1rem;">
+              <li>Z-Pulse access with Ads</li>
+              <li>1 Vehicle Profile</li>
+              <li>Short ride history (last 3 trips)</li>
+            </ul>
+            <a class="btn btn-secondary plan-cta" href="Payment.html?plan=free">Get Free</a>
+          </article>
+          <!-- Starter -->
+          <article class="market-card">
+            <h4>Starter</h4>
+            <p class="muted">For those looking for a little peace of mind.</p>
+            <p class="muted"><strong class="price" data-monthly="$8" data-yearly="$80">$10</strong>/mo</p>
+            <ul class="muted" style="margin-left:1rem;">
+              <li>Up to 3 vehicle Profiles</li>
+              <li>Maintenance Reminders</li>
+              <li>Extended trip history (last 10 trips)</li>
+            </ul>
+            <a class="btn btn-secondary plan-cta" href="Payment.html?plan=starter">Get Starter</a>
+          </article>
+
+          <!-- Pro -->
+          <article class="market-card">
+            <h4>Pro</h4>
+            <p class="muted">Best for hobbyists and anyone looking to deep dive their vehicle.</p>
+            <p class="muted"><strong class="price" data-monthly="$24" data-yearly="$240">$29</strong>/mo</p>
+            <ul class="muted" style="margin-left:1rem;">
+              <li>Everything in Starter</li>
+              <li>More Vehicle Profiles (20)</li>
+              <li>Advanced analytics</li>
+              <li>Unlimited Trip history</li>
+              <li>Step-by-step diagnostic flow</li>
+            </ul>
+            <a class="btn btn-primary plan-cta" href="Payment.html?plan=pro">Start Pro</a>
+          </article>
+
+          <!-- Business -->
+          <article class="market-card">
+            <h4>Business</h4>
+            <p class="muted">For larger orgs and regulated environments.</p>
+            <p class="muted"><strong class="price" data-monthly="$99+" data-yearly="$990">$79</strong>/mo</p>
+            <ul class="muted" style="margin-left:1rem;">
+              <li>Everything in Pro</li>
+              <li>Unlimited Vehicle Profiles</li>
+              <li>Bulk Reporting</li>
+              <li>API access to error data & reports</li>
+            </ul>
+            <a class="btn btn-secondary plan-cta" href="Payment.html?plan=business">Talk to Sales</a>
+          </article>
+        </div>
+
+        <p class="muted center" style="margin-top:1rem;">Prices in USD. Taxes may apply.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently asked questions</h2>
+          <p class="muted">A few quick answers. Ask about enterprise pricing via the contact form.</p>
+        </div>
+        <div class="panel">
+          <details>
+            <summary><strong>Can I change plans later?</strong></summary>
+            <p class="muted">Yes. Upgrades and downgrades are supported; changes are prorated on yearly billing.</p>
+          </details>
+          <div class="divider" style="margin:1rem 0;"></div>
+          <details>
+            <summary><strong>Do you offer refunds?</strong></summary>
+            <p class="muted">We offer a 14‑day refund window on yearly plans.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (mirrors index-2.html) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <section class="footer-section">
+          <h3>Zavaleta Enterprise</h3>
+          <p>Professional systems for intelligent interfaces, sustainable technology, and robust integration.</p>
+        </section>
+        <section class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index-2.html#about">About</a></li>
+            <li><a href="index-2.html#divisions">Divisions</a></li>
+          </ul>
+        </section>
+        <section class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@zavaletaenterprise.com">info@zavaletaenterprise.com</a></li>
+            <li><a href="index-2.html#contact">Request Information</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Zavaleta Enterprise. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle monthly/yearly prices
+    const toggle = document.getElementById('billing-toggle');
+    const prices = document.querySelectorAll('.price');
+    function setBilling() {
+      const yearly = toggle && toggle.checked;
+      prices.forEach(p => {
+        const m = p.getAttribute('data-monthly');
+        const y = p.getAttribute('data-yearly');
+        p.textContent = yearly ? y : m;
+      });
+    }
+    toggle && toggle.addEventListener('change', setBilling);
+    setBilling();
+
+    // Add a simple "scrolled" class to navbar to match styles.css behavior if used elsewhere
+    const nav = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 4) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>

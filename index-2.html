@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zavaleta Enterprise — Official Website</title>
+  <meta name="description" content="Zavaleta Enterprise — multidisciplinary engineering focused on intelligent systems, clean energy, and advanced integration.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Accessible skip link (kept minimal, matches dark theme) */
+    .visually-hidden{position:absolute!important;left:-9999px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;}
+    .visually-hidden:focus{left:12px!important;top:12px!important;width:auto!important;height:auto!important;padding:.5rem .75rem;background:#001314;border:1px solid rgba(0,255,255,.4);box-shadow:0 0 12px rgba(0,255,255,.4);border-radius:8px;color:#00ffff;z-index:1001;}
+  </style>
+</head>
+<body>
+
+  <!-- Accessibility: skip to main content -->
+  <a href="#main" class="visually-hidden">Skip to content</a>
+
+  <!-- Top Navigation (simplified: About | Divisions | Contact) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo" aria-label="Zavaleta Enterprise">
+        <div class="logo-text">
+          <div class="logo-main">ZAVALETA <span class="glow">ENTERPRISE</span></div>
+          <div class="logo-sub">Technology | Innovation | Intelligence</div>
+        </div>
+      </div>
+      <ul class="nav-menu" aria-label="Primary">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#divisions">Divisions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main (no hero section) -->
+  <main id="main">
+
+    <!-- ABOUT -->
+    <!-- Using .solution to pick up your cyan-accented section styling -->
+    <section id="about" class="solution" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="about-title">About</h2>
+          <p>Zavaleta Enterprise is a multidisciplinary engineering company focused on intelligent systems, sustainable innovation, and next-generation technology solutions.</p>
+        </div>
+
+        <!-- Three concise pillars (styled via .tech-grid / .tech-card) -->
+        <div class="tech-grid" role="list">
+          <article class="tech-card" role="listitem">
+            <div class="tech-icon">🧠</div>
+            <h3>Intelligent Systems</h3>
+            <p>Human-centered interfaces and applied computation for clarity, safety, and performance.</p>
+          </article>
+          <article class="tech-card" role="listitem">
+            <div class="tech-icon">♻️</div>
+            <h3>Sustainable Focus</h3>
+            <p>Practical pathways to cleaner power, efficient architectures, and resilient infrastructure.</p>
+          </article>
+          <article class="tech-card" role="listitem">
+            <div class="tech-icon">🧩</div>
+            <h3>Interoperability</h3>
+            <p>Software, hardware, and data engineered to work together from prototype to production.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVISIONS -->
+    <!-- Uses .target-market + .market-card for professional cards -->
+    <section id="divisions" class="target-market" aria-labelledby="divisions-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="divisions-title">Divisions</h2>
+          <p class="muted">Independent groups with a shared engineering backbone.</p>
+        </div>
+
+        <div class="market-content">
+          <article class="market-card">
+            <h4>R&amp;D</h4>
+            <p>Home to the Z-Pulse project and other prototype developments focused on intelligent diagnostics and embedded systems.</p>
+          </article>
+          <article class="market-card">
+            <h4>Clean Energy</h4>
+            <p>Renewable technologies, battery research, and efficient energy infrastructure initiatives.</p>
+          </article>
+          <article class="market-card">
+            <h4>Technology</h4>
+            <p>Advanced hardware, software, and computational tools across multiple engineering sectors.</p>
+          </article>
+          <article class="market-card">
+            <h4>Integration</h4>
+            <p>Unifying software, hardware, and data systems for seamless interoperability and deployment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="contact-title">Contact</h2>
+          <p class="contact-intro">For partnerships, demos, or general inquiries.</p>
+        </div>
+
+        <!-- No scripts: mailto keeps it portable and professional -->
+        <div class="contact-content">
+          <form class="contact-form" action="mailto:info@zavaletaenterprise.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" name="Name" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="Email" type="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="Message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+          </form>
+
+          <p class="contact-details">
+            Or email us directly: <a href="mailto:info@zavaletaenterprise.com">info@zavaletaenterprise.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <section class="footer-section">
+          <h3>Zavaleta Enterprise</h3>
+          <p>Professional systems for intelligent interfaces, sustainable technology, and robust integration.</p>
+        </section>
+        <section class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#divisions">Divisions</a></li>
+          </ul>
+        </section>
+        <section class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@zavaletaenterprise.com">info@zavaletaenterprise.com</a></li>
+            <li><a href="#contact">Request Information</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Zavaleta Enterprise. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Zavaleta Enterprise — Checkout</title>
+    <meta name="description" content="Secure payment method entry for Zavaleta Enterprise subscriptions.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Page-scoped helpers; optional to move into styles.css */
+        .checkout-hero {
+            padding: 8rem 0 3rem;
+            text-align: center;
+        }
+
+            .checkout-hero p {
+                max-width: 720px;
+                margin: .75rem auto 0;
+            }
+
+        .checkout-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .checkout-summary h3 {
+            margin-top: 0;
+        }
+
+        .checkout-summary ul {
+            margin-left: 1.25rem;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .checkout-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .checkout-hero {
+                padding-top: 9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Accessibility: skip link -->
+    <a href="#main" class="visually-hidden">Skip to content</a>
+
+    <!-- Top Navigation (same as pricing.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" aria-label="Zavaleta Enterprise">
+                <div class="logo-text">
+                    <div class="logo-main">ZAVALETA <span class="glow">ENTERPRISE</span></div>
+                    <div class="logo-sub">Technology | Innovation | Intelligence</div>
+                </div>
+            </div>
+            <ul class="nav-menu" aria-label="Primary">
+                <li class="nav-item"><a class="nav-link" href="index-2.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="index-2.html#divisions">Divisions</a></li>
+                <li class="nav-item"><a class="nav-link" href="index-2.html#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Hero -->
+        <section class="solution checkout-hero">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Enter payment details</h2>
+                    <p class="muted">
+                        Complete your subscription by securely entering your card information. You won’t be charged until you confirm.
+                    </p>
+                </div>
+                <p class="muted" id="selected-plan-note"></p>
+            </div>
+        </section>
+
+        <!-- Checkout layout: form + order summary -->
+        <section class="contact">
+            <div class="container">
+                <div class="checkout-layout">
+                    <!-- Payment form -->
+                    <div>
+                        <div class="section-header" style="text-align:left;">
+                            <h3>Payment method</h3>
+                            <p class="muted">Standard online card details — no actual processing is wired up yet.</p>
+                        </div>
+
+                        <form class="contact-form" action="#" method="post">
+                            <!-- Cardholder info -->
+                            <div class="form-group">
+                                <label for="card-name">Name on card</label>
+                                <input id="card-name" name="card_name" type="text" autocomplete="cc-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-number">Card number</label>
+                                <input id="card-number" name="card_number" type="text" inputmode="numeric" pattern="[0-9 ]*" placeholder="1234 5678 9012 3456" autocomplete="cc-number" required>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="form-group">
+                                    <label for="card-expiry">Expiry date</label>
+                                    <input id="card-expiry" name="card_expiry" type="text" placeholder="MM/YY" autocomplete="cc-exp" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvc">CVC</label>
+                                    <input id="card-cvc" name="card_cvc" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="123" autocomplete="cc-csc" required>
+                                </div>
+                            </div>
+
+                            <!-- Billing details -->
+                            <div class="section-header" style="text-align:left;margin-top:2rem;">
+                                <h3>Billing details</h3>
+                                <p class="muted">Used for invoices and receipts.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="billing-email">Billing email</label>
+                                <input id="billing-email" name="billing_email" type="email" autocomplete="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="billing-address">Billing address</label>
+                                <input id="billing-address" name="billing_address" type="text" autocomplete="street-address" required>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="form-group">
+                                    <label for="billing-city">City</label>
+                                    <input id="billing-city" name="billing_city" type="text" autocomplete="address-level2" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="billing-zip">ZIP / Postal code</label>
+                                    <input id="billing-zip" name="billing_zip" type="text" autocomplete="postal-code" required>
+                                </div>
+                            </div>
+
+                            <p class="muted" style="margin-top:1rem;font-size:.85rem;">
+                                This is a demo checkout page.
+                            </p>
+
+                            <button type="submit" class="btn btn-primary" style="margin-top:1.5rem;width:100%;">
+                                Confirm and pay
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Summary panel -->
+                    <aside class="panel checkout-summary">
+                        <h3 id="summary-plan-name">Subscription summary</h3>
+                        <p class="muted" id="summary-plan-price">Plan: <strong>Pro</strong> – $29/month (example)</p>
+
+                        <ul class="muted">
+                            <li>Secure, cancel-anytime.</li>
+                            <li>All future invoices will be sent to your billing email.</li>
+                            <li>Upgrade or downgrade plans as your needs change.</li>
+                        </ul>
+
+                        <div class="divider" style="margin:2rem 0;"></div>
+
+                        <p class="muted" style="font-size:.9rem;">
+                            Need help or prefer to pay via invoice or PO?
+                            <a href="index-2.html#contact">Contact us</a> and we’ll coordinate a manual onboarding.
+                        </p>
+
+                        <p class="muted" style="font-size:.8rem;margin-top:1rem;">
+                            By confirming payment, you agree to our standard terms and privacy policy.
+                        </p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (same as pricing.html / index-2.html) -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <section class="footer-section">
+                    <h3>Zavaleta Enterprise</h3>
+                    <p>Professional systems for intelligent interfaces, sustainable technology, and robust integration.</p>
+                </section>
+                <section class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index-2.html#about">About</a></li>
+                        <li><a href="index-2.html#divisions">Divisions</a></li>
+                    </ul>
+                </section>
+                <section class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@zavaletaenterprise.com">info@zavaletaenterprise.com</a></li>
+                        <li><a href="index-2.html#contact">Request Information</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Zavaleta Enterprise. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Simple navbar scroll effect (optional, keeps parity with other pages)
+    const nav = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 4) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+
+    // Read ?plan=... from the URL and update summary text
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get('plan') || 'pro';
+
+    const planMap = {
+      free:   { name: 'Free',    price: '$0/month' },
+      starter:{ name: 'Starter', price: '$9/month' },
+      pro:    { name: 'Pro',     price: '$29/month' },
+      business:{name: 'Business',price: '$79/month' }
+    };
+
+    const selected = planMap[plan.toLowerCase()] || planMap.pro;
+
+    const noteEl = document.getElementById('selected-plan-note');
+    const sumName = document.getElementById('summary-plan-name');
+    const sumPrice = document.getElementById('summary-plan-price');
+
+    if (noteEl && sumName && sumPrice) {
+      noteEl.textContent = `You are checking out with the ${selected.name} plan (${selected.price}).`;
+      sumName.textContent = `${selected.name} subscription`;
+      sumPrice.innerHTML = `Plan: <strong>${selected.name}</strong> – ${selected.price}`;
+    }
+    </script>
+</body>
+</html>
